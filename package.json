@@ -5,7 +5,8 @@
   "files": [
     "dist/*"
   ],
-  "types": "dist/blocklike.d.ts",
+  "main": "dist/blocklike-1.0.7.js",
+  "types": "dist/types/lib.d.ts",
   "scripts": {
     "start": "webpack serve",
     "watch": "webpack --progress --watch --config webpack.config.js",
@@ -16,7 +17,7 @@
     "full": "webpack --progress --config webpack.config.js",
     "mini": "webpack --progress --config webpack.config-mini.js && node scripts/mini.js",
     "docs": "npx jsdoc dist/blocklike-*.*.*.js --destination ./docs --template node_modules/minami --readme Docs-README.md",
-    "build": "npm run test && npm run full && npm run mini && npm run docs",
+    "build": "npm run test && npm run full && npm run mini && npm run docs && tsc",
     "version": "node scripts/version.js & npm run build && git add ."
   },
   "keywords": [
